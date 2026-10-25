@@ -19,12 +19,11 @@ is retired in favour of the public `alrobles/xpam` repository.
 Local check: R 4.6.1, Ubuntu 24.04, GDAL 3.11.4, on the built
 `xpam_1.0.0.tar.gz` with `--as-cran`: **0 ERROR, 0 WARNING, 2 NOTEs**.
 
-1. `CRAN incoming feasibility ... NOTE` — "New submission" plus the
-   package URLs (`https://alrobles.github.io/xpam/`,
-   `https://github.com/alrobles/xpam`) reported as 404.  The public
-   repository and its pkgdown site are created from this tree
-   immediately before submission, so both URLs resolve when CRAN reads
-   the tarball.
+1. `CRAN incoming feasibility ... NOTE` — "New submission".  An
+   earlier check of this same tree reported the package URLs as 404
+   because the public repository did not exist yet; the repository and
+   its pkgdown site have since been created from this tree and the URLs
+   now resolve (verified live before submission).
 2. `HTML version of manual ... NOTE` — "Skipping checking HTML
    validation: no command 'tidy' found" and "Skipping checking math
    rendering: package 'V8' unavailable".  A property of the local check
