@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/alrobles/xpam/blob/main/inst/CITATION)
+[`inst/CITATION`](https://github.com/alrobles/xpam/blob/v1.0.0/inst/CITATION)
 
 Robles A (2026). *xpam: Presence-Absence Matrix Construction from
 Species Range Maps*.
