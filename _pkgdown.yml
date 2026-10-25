@@ -1,0 +1,11 @@
+url: https://alrobles.github.io/xpam/
+template:
+  bootstrap: 5
+
+# Vignettes are not shipped in the CRAN tarball (see .Rbuildignore); they are
+# built by pkgdown from the source `vignettes/` directory and published on the
+# package website.  This mirrors the xsdm / xnicher convention.
+articles:
+- title: Articles
+  contents:
+  - xpam-intro

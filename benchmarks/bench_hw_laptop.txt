@@ -1,0 +1,4 @@
+# hardware: Intel(R) Core(TM) Ultra 9 288V, 8 logical CPUs
+# memory: 30.4 GB
+# R: R version 4.5.2 (2025-10-31), terra 1.9.50, GDAL 3.12.2
+# date: 2026-10-14T21:37:27-05:00

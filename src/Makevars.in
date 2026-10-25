@@ -1,0 +1,9 @@
+# ── Substituted by configure ──────────────────────────────────────────
+PKG_CPPFLAGS = @GDAL_CPPFLAGS@
+PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) -pthread
+PKG_LIBS     = @GDAL_LIBS@ $(SHLIB_OPENMP_CXXFLAGS) -pthread
+
+CXX_STD = CXX17
+
+# ── Object list (enumerated by configure — no GNU Make extensions) ────
+OBJECTS = @ALL_OBJECTS@

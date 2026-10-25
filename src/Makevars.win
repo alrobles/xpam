@@ -1,0 +1,6 @@
+# Windows build: no GDAL detection (native engine disabled -> stub errors).
+# The package still compiles, loads, and pam_env() works via terra.
+PKG_CPPFLAGS =
+PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS)
+PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS)
+CXX_STD = CXX17

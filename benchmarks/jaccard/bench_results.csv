@@ -1,0 +1,6 @@
+"algo","n_entities","n_units","seconds","extra"
+"fastJaccard::jaccard_fast_matrix",2000,20000,95.078,"dist matrix 2000x2000"
+"xpam dense (bitset, e2e)",2000,20000,1.209,"kernel=bitmap matrix=2000x2000"
+"xpam edges tau=0.05 (e2e)",2000,20000,0.68,"kernel=bitmap edges=72295"
+"xpam edges tau=0.20 (e2e)",2000,20000,0.377,"kernel=bitmap edges=26259"
+"xpam edges tau=0.50 (e2e)",2000,20000,0.338,"kernel=bitmap edges=2706"
