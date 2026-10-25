@@ -27,7 +27,15 @@ The package offers two scales of operation:
 
 ## Installation
 
-`# From CRAN`` `[`install.packages`](https://rdrr.io/r/utils/install.packages.html)`(``"xpam"``)`` `` ``# Development version from GitHub`` ``# install.packages("remotes")`` ``remotes``::`[`install_github`](https://remotes.r-lib.org/reference/install_github.html)`(``"alrobles/xpam"``)`
+``` r
+
+# From CRAN
+install.packages("xpam")
+
+# Development version from GitHub
+# install.packages("remotes")
+remotes::install_github("alrobles/xpam")
+```
 
 GDAL is optional. When present at build time
 ([`has_gdal()`](https://alrobles.github.io/xpam/reference/has_gdal.md)
@@ -37,11 +45,37 @@ path works.
 
 ## Quick Start
 
-[`library`](https://rdrr.io/r/base/library.html)`(`[`xpam`](https://alrobles.github.io/xpam/)`)`` `` ``# Load example data: Rodentia of Mexico (downloaded on demand)`` ``shp`` ``<-`` `[`get_rodentia_mexico`](https://alrobles.github.io/xpam/reference/get_rodentia_mexico.md)`(``)`` `` ``# Build a PAM at 1-degree resolution`` ``pam_result`` ``<-`` `[`get_geo_pam`](https://alrobles.github.io/xpam/reference/get_geo_pam.md)`(``shp``, res ``=`` ``1``)`` `[`head`](https://rdrr.io/r/utils/head.html)`(``pam_result``)`` ``#> # A tibble: 6 × 42`` ``#> x y Chaetodipus arenarius ...`` ``#> <dbl> <dbl> <dbl>`` ``#> 1 -118. 23.5 0`` ``#> ... `
+``` r
+
+library(xpam)
+
+# Load example data: Rodentia of Mexico (downloaded on demand)
+shp <- get_rodentia_mexico()
+
+# Build a PAM at 1-degree resolution
+pam_result <- get_geo_pam(shp, res = 1)
+head(pam_result)
+#> # A tibble: 6 × 42
+#>       x     y Chaetodipus arenarius ...
+#>   <dbl> <dbl>                 <dbl>
+#> 1 -118.  23.5                     0
+#> ... 
+```
 
 A fully local example that needs no download:
 
-`square`` ``<-`` ``function``(``x0``, ``y0``, ``size`` ``=`` ``2``)`` ``{`` `` ``m`` ``<-`` `[`matrix`](https://rdrr.io/r/base/matrix.html)`(`[`c`](https://rdrr.io/r/base/c.html)`(``x0``, ``y0``, ``x0`` ``+`` ``size``, ``y0``,`` `` ``x0`` ``+`` ``size``, ``y0`` ``+`` ``size``, ``x0``, ``y0`` ``+`` ``size``)``,`` `` ncol ``=`` ``2``, byrow ``=`` ``TRUE``)`` `` ``terra``::`[`vect`](https://rspatial.github.io/terra/reference/vect.html)`(``m``, type ``=`` ``"polygons"``, crs ``=`` ``"EPSG:4326"``)`` ``}`` ``ranges`` ``<-`` `[`rbind`](https://rdrr.io/r/base/cbind.html)`(``square``(``0``, ``0``)``, ``square``(``2``, ``2``)``)`` ``ranges``$``sciname`` ``<-`` `[`c`](https://rdrr.io/r/base/c.html)`(``"species_a"``, ``"species_b"``)`` `[`get_geo_pam`](https://alrobles.github.io/xpam/reference/get_geo_pam.md)`(``ranges``, res ``=`` ``1``)`
+``` r
+
+square <- function(x0, y0, size = 2) {
+  m <- matrix(c(x0, y0, x0 + size, y0,
+                x0 + size, y0 + size, x0, y0 + size),
+              ncol = 2, byrow = TRUE)
+  terra::vect(m, type = "polygons", crs = "EPSG:4326")
+}
+ranges <- rbind(square(0, 0), square(2, 2))
+ranges$sciname <- c("species_a", "species_b")
+get_geo_pam(ranges, res = 1)
+```
 
 ## Main Functions
 
@@ -64,7 +98,10 @@ are deliberately not shipped in the CRAN tarball.
 
 ## Citation
 
-[`citation`](https://rdrr.io/r/utils/citation.html)`(``"xpam"``)`
+``` r
+
+citation("xpam")
+```
 
 ## License
 

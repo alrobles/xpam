@@ -1,9 +1,9 @@
-pandoc: 3.10.1
+pandoc: 3.8.3
 pkgdown: 2.2.1
 pkgdown_sha: ~
 articles:
   xpam-intro: xpam-intro.html
-last_built: 2026-10-25T23:46Z
+last_built: 2026-10-25T23:50Z
 urls:
   reference: https://alrobles.github.io/xpam/reference
   article: https://alrobles.github.io/xpam/articles
